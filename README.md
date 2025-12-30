@@ -44,6 +44,11 @@ Common Regularization Techniques:
    - Also known as L2 Regularization
  - Elastic Net
    - A combination of Lasso (L1) and Ridge (L2) regularization
+
+<br>
+  
+  <p align="center"><img src="Images/regularization.webp" alt="regularization" width="50%"/></p>
+  
 <br><br>
 
 ## Lasso (Least Absolute Shrinkage and Selection Operator)
