@@ -61,6 +61,7 @@ $$
   - This happens because a larger 𝜆 increases the penalty, encouraging the optimizer to reduce or eliminate less important coefficients in order to minimize the overall objective function.
 - As a result, features with zero coefficients are effectively removed from the model, making LASSO a powerful technique for feature selection.
 
+
 <br><br>
 
 ## Ridge Regression (Tikhonov Regularization)
