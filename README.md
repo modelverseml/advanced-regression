@@ -88,11 +88,17 @@ Mathematical equation:
 Combination of L1 (Lasso) and L2 (Ridge) penalties:
 
 $$
-\arg \min_{\beta_0 \dots \beta_p}\ \sum_{i=1}^n\left( y_i - \beta_0 - \sum_{j=1}^p(\beta_j X_{ij}) \right)^2 + \lambda_1 \sum_{j=1}^p |\beta_j| + \lambda_2 \sum_{j=1}^p \beta_j^2
+\hat{\beta} = \arg \min_{\beta_0, \dots, \beta_p} \sum_{i=1}^n \left( y_i - \beta_0 - \sum_{j=1}^p \beta_j X_{ij} \right)^2 + \lambda \left[ \alpha \sum_{j=1}^p |\beta_j| + \frac{1-\alpha}{2} \sum_{j=1}^p \beta_j^2 \right]
 $$
 
-- Elastic Net combines the benefits of **Lasso (feature selection)** and **Ridge (stability with correlated features)**.  
-- It is useful when there are **many correlated features**, and Lasso alone may arbitrarily select only one.  
-- The balance between L1 and L2 penalties is controlled by the hyperparameters $\lambda_1$ and $\lambda_2$.  
-- Elastic Net can **shrink some coefficients to zero** while also stabilizing the estimates of correlated predictors.
+Where:
+
+- `λ ≥ 0` controls the **overall strength of regularization**  
+- `α ∈ [0,1]` controls the **mix between L1 (Lasso) and L2 (Ridge)** penalties
+
+**Key Points**
+- Combines the benefits of **Lasso (feature selection)** and **Ridge (stability for correlated features)**.  
+- Useful when there are **many correlated features**, as Lasso may arbitrarily select only one.  
+- Can **shrink some coefficients to zero** while stabilizing correlated predictors.  
+- Adjusting `α` balances between **sparsity** (`α → 1`) and **stability** (`α → 0`). 
 
